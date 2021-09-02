@@ -1,0 +1,2 @@
+# Bachelor-BOT
+ Lokaler DiscordBot
