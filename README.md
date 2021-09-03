@@ -1,4 +1,4 @@
 # Bachelor-BOT
- Lokaler DiscordBot
- TestTEstTest
+ Lokaler Discord Bot
+ 
  

@@ -6,7 +6,10 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
-  "author": "",
+  "author": "Tillman Städtner",
   "license": "ISC",
-  "description": ""
+  "description": "",
+  "dependencies": {
+    "discord.js": "^13.1.0"
+  }
 }
