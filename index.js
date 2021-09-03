@@ -1,5 +1,7 @@
 //console.log("Hello!");
 
+require('dotenv').config();
+
 const Discord = require('discord.js'); //Import of the Discord.js-Library
 
 const intents = new Discord.Intents(32767);
