@@ -9,7 +9,7 @@ const intents = new Discord.Intents(32767);
 const client = new Discord.Client({intents}); //Creating a Discord-Object
 
 
-client.login('ODgyNjQxNzMzMjc4NjQ2MzQy.YS-WKw.80ItqXnTz9MuOn8ig04bFV1aM80'); //Login with the bots token
+client.login(process.env.TOKEN); //Login with the bots token
 
 client.on('ready', readyDiscord);
 
@@ -19,11 +19,5 @@ function readyDiscord(){
 }
 
 //Function call for an incoming message
-client.on('messageCreate', message);
-
-function message(msg){
-    if (msg.content === 'Hello Bot' && msg.channel.id === '882996171499503657'){
-        msg.channel.send('Hello ' + msg.author.username)
-    }
-
-}
+const comHandler = require('./commands/commands')
+client.on('messageCreate', comHandler);
