@@ -1,12 +1,10 @@
-//console.log("Hello!");
 
 require('dotenv').config();
 
 const Discord = require('discord.js'); //Import of the Discord.js-Library
-
 const intents = new Discord.Intents(32767);
-
 const client = new Discord.Client({intents}); //Creating a Discord-Object
+
 
 
 client.login(process.env.TOKEN); //Login with the bots token
