@@ -1,0 +1,7 @@
+Mitarbeiter beschäftigt status
+
+Meldung an Mitarbeiter neuer Kunden
+
+Neuer Kunde -> Meldung an Kunde, Hinweise,
+
+Kanalmanagement ausdenken -> Startkanal, Mitarbeiter-Chat, 

@@ -1,9 +1,12 @@
 const test = require('./test');
+const admins = require('./readyness/admins');
 const ready = require('./readyness/ready');
 const readyme = require('./readyness/readyme');
 const unreadyme = require('./readyness/unreadyme');
+const register = require('./userman/register');
+const unregister = require('./userman/unregister');
 
-const commands = { test,ready,readyme,unreadyme };
+const commands = {admins, test, ready, readyme, unreadyme, register, unregister };
 
 module.exports = async function (msg){
     let splits = msg.content.split(' ');
