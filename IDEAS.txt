@@ -4,4 +4,4 @@ Meldung an Mitarbeiter neuer Kunden
 
 Neuer Kunde -> Meldung an Kunde, Hinweise,
 
-Kanalmanagement ausdenken -> Startkanal, Mitarbeiter-Chat, 
+Kanalmanagement ausdenken -> Startkanal, Mitarbeiter-Chat,
