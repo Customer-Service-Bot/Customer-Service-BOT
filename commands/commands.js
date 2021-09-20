@@ -1,12 +1,15 @@
 const test = require('./test');
 const admins = require('./readyness/admins');
-const ready = require('./readyness/ready');
-const readyme = require('./readyness/readyme');
-const unreadyme = require('./readyness/unreadyme');
+
+const readyme = require('./readyness/status/readyme');
+
+const online = require('./readyness/online');
+const onlineme = require('./readyness/onlineme');
+const unonlineme = require('./readyness/unonlineme');
 const register = require('./userman/register');
 const unregister = require('./userman/unregister');
 
-const commands = {admins, test, ready, readyme, unreadyme, register, unregister };
+const commands = {admins, test, readyme, online, onlineme, unonlineme, register, unregister };
 
 module.exports = async function (msg){
     let splits = msg.content.split(' ');

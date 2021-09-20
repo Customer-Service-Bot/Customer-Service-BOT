@@ -2,8 +2,8 @@ const fs = require('fs');
 const Discord = require('discord.js');  //Import of the Discord.js-Library
 //const constants = require("constants");
 
-const isOwner = require('../readyness/isOwner');
-const isAdmin = require('../readyness/isAdmin');
+const isOwner = require('../../help_functions/isOwner');
+const isAdmin = require('../../help_functions/isAdmin');
 
 module.exports = function (msg, splits) {
     const timestamp = Date.now();

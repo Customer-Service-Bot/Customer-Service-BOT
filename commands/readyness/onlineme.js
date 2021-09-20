@@ -2,8 +2,10 @@ const fs = require('fs');
 const Discord = require('discord.js');  //Import of the Discord.js-Library
 //const constants = require("constants");
 
-const isOwner = require('../readyness/isOwner');
-const isAdmin = require('../readyness/isAdmin');
+const isOwner = require('../../help_functions/isOwner');
+const isAdmin = require('../../help_functions/isAdmin');
+const isOnline = require('../../help_functions/isOnline');
+const isReady = require('../../help_functions/isReady');
 
 module.exports = function (msg, splits) {
     const onlinersJSON = fs.readFileSync('data/onliners.json');
@@ -21,6 +23,7 @@ module.exports = function (msg, splits) {
     user_obj.user_name = user_name;
     user_obj.user_id = user_id;
     user_obj.timestamp = timestamp;
+    user_obj.status = "READY";
 
     if (isAdmin(user_id)[0] === true) {
         if (onliners["onliners"].length !== 0) {

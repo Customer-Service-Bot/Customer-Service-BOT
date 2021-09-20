@@ -3,8 +3,8 @@ const fs = require('fs');
 const Discord = require('discord.js')
 const {MessageEmbed} = require("discord.js");
 
-const isOwner = require('../readyness/isOwner');
-const isAdmin = require('../readyness/isAdmin');
+const isOwner = require('../../help_functions/isOwner');
+const isAdmin = require('../../help_functions/isAdmin');
 
 module.exports = function (msg, splits) {
     const adminsJSON = fs.readFileSync('data/admins.json');
