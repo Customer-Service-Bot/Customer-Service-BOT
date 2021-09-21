@@ -5,6 +5,8 @@ module.exports = function (member){
     member.send("Willkommen auf dem Server von 'Test-Company'.")
 
     //Roll assignment
-    let role= member.guild.roles.cache.find(role => role.name === "Customer");
+    let role= member.guild.roles.cache.find(role => role.name === "Customer-Waiting");
     member.roles.add(role);
+
+    //JSON
 }

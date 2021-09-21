@@ -26,7 +26,11 @@ module.exports = function(msg,splits){
         for (let i =0; i < onliners["onliners"].length; i++){
             let timestamp = msToTime(onliners["onliners"][i].timestamp);
             user_embed.addFields(
-                { name: "Name:   " + onliners["onliners"][i].user_name, value: "Logged-In Scince:   " + timestamp }
+                { name: '\u200B', value: '\u200B' },
+                { name: "Name:   ", value: onliners["onliners"][i].user_name, inline: true},
+                { name: "Status:   ", value: onliners["onliners"][i].status, inline: true},
+                { name: "Logged-In Since:   ", value: timestamp, inline:true}
+
             )
         }
 
