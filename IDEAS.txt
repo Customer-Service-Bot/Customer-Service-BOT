@@ -4,8 +4,8 @@ Rolle des Customers zuweisen ##
 
 Neuer Kunde -> Meldung an Kunde, Hinweise, ##
 
-Kanalmanagement ausdenken -> Startkanal, Mitarbeiter-Chat,
+Kanalmanagement ausdenken -> Startkanal, Mitarbeiter-Chat ##
 
-JSON, mit UserInfos, Chatverlauf, Infos,
+JSON, mit UserInfos, Chatverlauf, Infos
 
 Terminvergabe -> Datum Zeit eintragen

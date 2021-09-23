@@ -2,10 +2,10 @@ const fs = require('fs');
 const Discord = require('discord.js');  //Import of the Discord.js-Library
 //const constants = require("constants");
 
-const isOwner = require('../../help_functions/isOwner');
-const isAdmin = require('../../help_functions/isAdmin');
-const isOnline = require('../../help_functions/isOnline');
-const isReady = require('../../help_functions/isReady');
+const isOwner = require('../../helpfunctions/isOwner');
+const isAdmin = require('../../helpfunctions/isAdmin');
+const isOnline = require('../../helpfunctions/isOnline');
+const isReady = require('../../helpfunctions/isReady');
 
 module.exports = function (msg, splits) {
     const onlinersJSON = fs.readFileSync('data/onliners.json');

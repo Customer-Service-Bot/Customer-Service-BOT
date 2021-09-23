@@ -2,10 +2,10 @@ const fs = require('fs');
 const Discord = require('discord.js');  //Import of the Discord.js-Library
 //const constants = require("constants");
 
-const isOwner = require('../../../help_functions/isOwner');
-const isAdmin = require('../../../help_functions/isAdmin');
-const isOnline = require('../../../help_functions/isOnline');
-const isReady = require('../../../help_functions/isReady');
+const isOwner = require('../../../helpfunctions/isOwner');
+const isAdmin = require('../../../helpfunctions/isAdmin');
+const isOnline = require('../../../helpfunctions/isOnline');
+const isReady = require('../../../helpfunctions/isReady');
 
 
 module.exports = function (msg, splits) {
@@ -16,7 +16,7 @@ module.exports = function (msg, splits) {
 
     function finished(err) {
         console.log("Status to ready!");
-        msg.reply("You have been set to ready!");
+        //msg.reply("You have been set to ready!");
     }
 
     let user_id = msg.author.id;
@@ -36,6 +36,7 @@ module.exports = function (msg, splits) {
                         onliners["onliners"][i].status = "BUSY";
                         let onliners_JSON = JSON.stringify(onliners);
                         fs.writeFile('data/onliners.json', onliners_JSON, finished);
+                        msg.reply("You have been set to busy!")
                         break;
                     }
                 }
