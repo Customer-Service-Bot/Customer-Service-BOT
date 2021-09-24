@@ -16,7 +16,9 @@ const unonlineme = require('./readyness/unonlineme');
 const register = require('./userman/register');
 const unregister = require('./userman/unregister');
 
-const commands = {admins, test, findoldestcustomer ,readyme, unreadyme, online, onlineme, unonlineme, register, unregister };
+const next = require('./meeting/next');
+
+const commands = {admins, test, next, findoldestcustomer ,readyme, unreadyme, online, onlineme, unonlineme, register, unregister };
 
 module.exports = async function (msg){
     let splits = msg.content.split(' ');

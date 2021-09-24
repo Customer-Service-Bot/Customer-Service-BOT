@@ -1,6 +1,6 @@
 const fs = require('fs');
 const Discord = require('discord.js');  //Import of the Discord.js-Library
-const hasJSON = require('/Users/Tillman/Desktop/Bachelor-Bot/Bachelor-BOT/helpfunctions/hasJSON');
+const hasJSON = require('./helpfunctions/hasJSON');
 const constants = require("constants");
 
 module.exports = function (member) {

@@ -28,4 +28,13 @@ module.exports = function (member) {
             fs.writeFile('data/customers/customersJSON.json', new_customers_JSON, finished);
         }
     }
+
+    for (let i = 0; i < customers["CustomersKnown"].length; i++) {
+        console.log(customers["CustomersKnown"].length);
+        if (customers["CustomersKnown"][i].user_id === user_id) {
+            customers["CustomersKnown"].splice(i, 1);
+            let new_customers_JSON = JSON.stringify(customers);
+            fs.writeFile('data/customers/customersJSON.json', new_customers_JSON, finished);
+        }
+    }
 }
