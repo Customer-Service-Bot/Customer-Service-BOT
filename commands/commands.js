@@ -17,16 +17,38 @@ const register = require('./userman/register');
 const unregister = require('./userman/unregister');
 
 const next = require('./meeting/next');
+const addproblem = require('./meeting/addproblem');
+const addnote = require('./meeting/addNote')
+const customer = require('./meeting/customer')
 
-const commands = {admins, test, next, findoldestcustomer ,readyme, unreadyme, online, onlineme, unonlineme, register, unregister };
+const commands = {
+    admins,
+    test,
+    next,
+    addproblem,
+    addnote,
+    customer,
+    findoldestcustomer,
+    readyme,
+    unreadyme,
+    online,
+    onlineme,
+    unonlineme,
+    register,
+    unregister
+};
 
-module.exports = async function (msg){
+module.exports = async function (msg) {
+
+
+    //console.log("Message Received")
+
     let splits = msg.content.split(' ');
     let command = splits.shift();
-    if (command.charAt(0) === '!'){
+    if (command.charAt(0) === '!') {
         command = command.substring(1).toUpperCase().toLowerCase();
         if (commands.hasOwnProperty(command) === true) {
-            commands[command](msg,splits);
+            commands[command](msg, splits);
         } else {
             msg.reply('The Command "' + command + '" does not exist.');
         }

@@ -7,7 +7,6 @@ const client = new Discord.Client({intents}); //Creating a Discord-Object
 const newCustomer = require('./welcome');
 const goodbye = require('./commands/goodbye');
 
-
 client.login(process.env.TOKEN); //Login with the bots token
 
 client.on('ready', readyDiscord);
@@ -24,6 +23,7 @@ client.on('guildMemberRemove', (member) => {
 function readyDiscord(){
     console.log("I'm ready");
 }
+
 
 //Function call for an incoming message
 const comHandler = require('./commands/commands')

@@ -1,1 +1,10 @@
-{"user_id":"888034011694395414","user_name":"BotMember001","joined":1632481270586,"problem":""}
+{
+  "user_id": "888034011694395414",
+  "user_name": "BotMember001",
+  "joined": 1632590015991,
+  "problem": "This user has the Problem",
+  "notes": [
+    "Note Number 1 TEst",
+    "Note Number 2 BLABLALBA"
+  ]
+}

@@ -14,11 +14,13 @@ module.exports = function (member) {
         const path = './data/customers/' + user_id + '.json';
         fs.unlinkSync(path);
     }
+    console.log("1")
 
     //Remove from customerJSON
     function finished(err) {
         console.log("CustomersJSON ready!");
     }
+    console.log("2")
 
     for (let i = 0; i < customers["CustomersWaiting"].length; i++) {
         console.log(customers["CustomersWaiting"].length);
@@ -28,6 +30,7 @@ module.exports = function (member) {
             fs.writeFile('data/customers/customersJSON.json', new_customers_JSON, finished);
         }
     }
+    console.log("3")
 
     for (let i = 0; i < customers["CustomersKnown"].length; i++) {
         console.log(customers["CustomersKnown"].length);
@@ -37,4 +40,17 @@ module.exports = function (member) {
             fs.writeFile('data/customers/customersJSON.json', new_customers_JSON, finished);
         }
     }
+    console.log("4")
+
+
+    //delete Voice-Channel
+    let v_channel_name = 'Voice  for ' + member.user.username;
+    let v_channel = member.guild.channels.cache.find(channel => channel.name === v_channel_name);
+
+    if (v_channel !== undefined){
+        v_channel.delete();
+    } else {
+        console.log("Channel cant be deleted. Doesnt exist.")
+    }
+    console.log("5")
 }

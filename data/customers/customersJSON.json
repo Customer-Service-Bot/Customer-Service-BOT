@@ -1,15 +1,1 @@
-{
-  "CustomersWaiting": [],
-  "CustomersKnown": [
-    {
-      "user_id": "889511026305953853",
-      "user_name": "botMember002",
-      "joined": 1632481213095
-    },
-    {
-      "user_id": "888034011694395414",
-      "user_name": "BotMember001",
-      "joined": 1632481270586
-    }
-  ]
-}
+{"CustomersWaiting":[{"user_id":"888034011694395414","user_name":"BotMember001","joined":1632590015991}],"CustomersKnown":[]}
