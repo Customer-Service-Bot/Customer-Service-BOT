@@ -25,8 +25,8 @@ module.exports = function (msg, splits) {
                     {name: 'ID', value: String(customer.user_id)},
                     {name: "Joined", value: toTimeAndDate(customer.joined)},
                     {name: "Problem", value: customer.problem},
-                    {name: "NOTES", value: "-----------------"},
-                    {name: '\u200B', value: '\u200B'})
+                    {name: '\u200B', value: '\u200B'},
+                    {name: "NOTES", value: "-----------------"})
             for (let i = 0; i < customer["notes"].length; i++) {
                 customer_embed.addFields(
                     {name: "Note " + i, value: customer["notes"][i]}
