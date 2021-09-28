@@ -18,6 +18,5 @@ module.exports = function (msg, splits) {
         }
         i++;
     }
-    console.log(next)
     return next;
 }

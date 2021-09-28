@@ -21,19 +21,16 @@ module.exports = function (msg, splits) {
             for (let i = 0; i < admins["admins"].length; i++) {
 
                 if (admins["admins"][i].user_id === user_id) {
-                    console.log("Element wird gelöscht");
-                    msg.reply("User deregistered!");
+                    msg.reply("User deregistered!").catch(console.error);
                     admins["admins"].splice(i, 1);
                     break;
                 }
 
                 if (i === admins["admins"].length - 1) {
-                    console.log("User nicht angemeldet");
-                    msg.reply("Cannot log you out - You are not logged in!");
+                    msg.reply("Cannot log you out - You are not logged in!").catch(console.error);
                 }
             }
         } else {
-            console.log("User nicht registriert");
             msg.reply("Cannot deregister user - ID is not registered!");
         }
         let admins_JSON = JSON.stringify(admins);
@@ -41,53 +38,6 @@ module.exports = function (msg, splits) {
 
 
     } else {
-        msg.reply("Cannot deregister user - Only registered 'Owners' can perform this action!");
+        msg.reply("Cannot deregister user - Only registered 'Owners' can perform this action!").catch(console.error);
     }
-
-    //function finished(err) {
-    //    console.log("Admins Ready!");
-    //}
-    //
-    //if (isOwner(author_id)[0] === true) {
-    //    for (let i = 0; i < admins["admins"].length; i++) {
-    //        if (admins["admins"][i].user_id === user_id) {
-    //            console.log("Admin wird gelöscht");
-    //            msg.reply("ID deregistered!")
-    //            admins["admins"].splice(i, 1)
-    //            break;
-    //        }
-    //        if (i === admins["admins"].length - 1) {
-    //            admins["admins"].push(user_obj);
-    //            let admins_JSON = JSON.stringify(admins);
-    //            fs.writeFile('data/admins.json', admins_JSON, finished);
-    //            break;
-    //        }
-    //    }
-    //    let admins_JSON = JSON.stringify(admins);
-    //    fs.writeFile('data/admins.json', admins_JSON, finished);
-    //
-    //} else {
-    //    msg.reply("You do not have the permissions for this Action. An 'Owner' must perform '!deregister'!");
-    //}
-
-
-    //for (let i = 0; i < onliners["onliners"].length; i++) {
-    //    if (onliners["onliners"][i].user_id === user_id) {
-    //        console.log("Element wird gelöscht");
-    //        msg.reply("You have been logged out!")
-    //        onliners["onliners"].splice(i, 1)
-    //        break;
-    //    }
-    //
-    //    if (i === onliners["onliners"].length - 1) {
-    //        console.log("User nicht angemeldet");
-    //        msg.reply("Cannot log you out - You are not logged in!")
-    //    }
-    //}
-    //let onliners_JSON = JSON.stringify(onliners);
-    //fs.writeFile('data/onliners.json', onliners_JSON, finished);
-    //
-    //function finished(err) {
-    //    console.log("Onliners Ready!");
-    //}
 }

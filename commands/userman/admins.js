@@ -19,17 +19,17 @@ module.exports = function (msg, splits) {
         if (admins["admins"].length > 0) {
             for (let i = 0; i < admins["admins"].length; i++) {
 
-                let user_id = msg.guild.members.cache.get(admins["admins"][i].user_id);
+                //let user_id = msg.guild.members.cache.get(admins["admins"][i].user_id);
                 user_embed.addFields(
-                    {name: "Name:   " + user_id.user.username, value: "ID:   " + admins["admins"][i].user_id}
+                    {name: "Name:   " +  admins["admins"][i].user_name, value: "ID:   " + admins["admins"][i].user_id}
                 )
             }
         } else {
             user_embed.setDescription("No users are registered as admins.");
         }
-        msg.reply({embeds: [user_embed]});
+        msg.reply({embeds: [user_embed]}).catch(console.error);
     } else {
-        msg.reply("You do not have the permissions to use this command! You need to be an admin!");
+        msg.reply("You do not have the permissions to use this command! You need to be an admin!").catch(console.error);
     }
 
 }

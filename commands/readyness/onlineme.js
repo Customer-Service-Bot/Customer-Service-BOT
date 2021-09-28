@@ -13,7 +13,7 @@ module.exports = function (msg, splits) {
 
     function finished(err) {
         console.log("Onliners Ready!");
-        msg.reply("You have been logged in!");
+        msg.reply("You have been logged in!").catch(console.error);
     }
 
     const timestamp = Date.now();
@@ -30,8 +30,7 @@ module.exports = function (msg, splits) {
             for (let i = 0; i < onliners["onliners"].length; i++) {
 
                 if (onliners["onliners"][i].user_id === user_id) {
-                    console.log("Element vorhanden");
-                    msg.reply("Cannot log you in - You are already logged in!")
+                    msg.reply("Cannot log you in - You are already logged in!").catch(console.error);
                     break;
                 }
                 if (i === onliners["onliners"].length - 1) {
@@ -47,6 +46,6 @@ module.exports = function (msg, splits) {
             fs.writeFile('data/onliners.json', onliners_JSON, finished);
         }
     } else {
-        msg.reply("Cannot log you in - You are not a registered admin!");
+        msg.reply("Cannot log you in - You are not a registered admin!").catch(console.error);
     }
 }

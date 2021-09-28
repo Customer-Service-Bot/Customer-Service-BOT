@@ -1,6 +1,5 @@
 const fs = require('fs');
 const Discord = require('discord.js');  //Import of the Discord.js-Library
-//const constants = require("constants");
 
 const isOwner = require('../../helpfunctions/isOwner');
 const isAdmin = require('../../helpfunctions/isAdmin');
@@ -26,27 +25,24 @@ module.exports = function (msg, splits) {
             for (let i = 0; i < onliners["onliners"].length; i++) {
 
                 if (onliners["onliners"][i].user_id === user_id) {
-                    console.log("Element wird gelöscht");
-                    msg.reply("You have been logged out!");
+                    msg.reply("You have been logged out!").catch(console.error);
                     onliners["onliners"].splice(i, 1);
                     break;
                 }
 
                 if (i === onliners["onliners"].length - 1) {
-                    console.log("User nicht angemeldet");
-                    msg.reply("Cannot log you out - You are not logged in!");
+                    msg.reply("Cannot log you out - You are not logged in!").catch(console.error);
                 }
             }
         } else {
-            console.log("User nicht angemeldet");
-            msg.reply("Cannot log you out - You are not logged in!");
+            msg.reply("Cannot log you out - You are not logged in!").catch(console.error);
         }
         let onliners_JSON = JSON.stringify(onliners);
         fs.writeFile('data/onliners.json', onliners_JSON, finished);
 
 
     } else {
-        msg.reply("Cannot log you out - You are not a registered admin!");
+        msg.reply("Cannot log you out - You are not a registered admin!").catch(console.error);
     }
 
 }

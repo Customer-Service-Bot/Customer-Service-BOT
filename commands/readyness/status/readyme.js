@@ -16,7 +16,7 @@ module.exports = function (msg, splits) {
 
     function finished(err) {
         console.log("Status to ready!");
-        msg.reply("You have been set to ready!");
+        msg.reply("You have been set to ready!").catch(console.error);
     }
 
     let user_id = msg.author.id;
@@ -26,7 +26,6 @@ module.exports = function (msg, splits) {
         if (isOnline(user_id)[0] === true) {
             if (isReady(user_id)[0] === true) {
 
-                console.log("User is already set to READY");
                 msg.reply("You can not be set to 'ready' - You are already set to 'ready'");
             }
             if (isReady(user_id)[0] === false) {
@@ -41,10 +40,10 @@ module.exports = function (msg, splits) {
                 }
             }
         } else {
-            msg.reply("Cannot set you to 'Ready' - You are not logged in yet! Type '!onlineme' to do so.");
+            msg.reply("Cannot set you to 'Ready' - You are not logged in yet! Type '!onlineme' to do so.").catch(console.error);
         }
     } else {
-        msg.reply("Cannot set you to 'Ready' - You are not a registered admin!");
+        msg.reply("Cannot set you to 'Ready' - You are not a registered admin!").catch(console.error);
     }
 
 }

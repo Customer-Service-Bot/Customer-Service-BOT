@@ -35,5 +35,5 @@ module.exports = function(msg,splits){
         }
 
 
-    msg.reply({ embeds: [user_embed] });
+    msg.reply({ embeds: [user_embed] }).catch(console.error);
 }

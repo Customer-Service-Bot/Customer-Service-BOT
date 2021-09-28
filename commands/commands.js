@@ -1,14 +1,13 @@
+require('dotenv').config();
+
 const test = require('./test');
+const help = require('./help')
 const admins = require('./userman/admins');
 
 const findoldestcustomer = require('../helpfunctions/findOldestCustomer');
-//const randomizecustomer = require('../helpfunctions/randomizeCustomer');
-
 
 const readyme = require('./readyness/status/readyme');
 const unreadyme = require('./readyness/status/unreadyme');
-
-//const time = require('../helpfunctions/toTimeAndDate');
 
 const online = require('./readyness/online');
 const onlineme = require('./readyness/onlineme');
@@ -24,6 +23,7 @@ const customer = require('./meeting/customer')
 const commands = {
     admins,
     test,
+    help,
     next,
     addproblem,
     addnote,
@@ -40,18 +40,19 @@ const commands = {
 
 module.exports = async function (msg) {
 
-
-    //console.log("Message Received")
-
     let splits = msg.content.split(' ');
     let command = splits.shift();
     if (command.charAt(0) === '!') {
         command = command.substring(1).toUpperCase().toLowerCase();
         if (commands.hasOwnProperty(command) === true) {
-            commands[command](msg, splits);
+            if (msg.channel.id === process.env.BOTCHANNEL) {
+                commands[command](msg, splits);
+            } else {
+                await msg.author.send("Please only use commands in the channel for Bot-Messages").catch(console.error);
+                await msg.delete().catch(console.error);
+            }
         } else {
-            msg.reply('The Command "' + command + '" does not exist.');
+            msg.reply('The Command "' + command + '" does not exist.').catch(console.error);
         }
-
     }
 }

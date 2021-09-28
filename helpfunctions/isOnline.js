@@ -9,13 +9,11 @@ module.exports = function (id) {
     for (let i = 0; i < onliners["onliners"].length; i++){
 
         if (onliners["onliners"][i].user_id === id){
-            console.log("Is Online");
             answer[0] = true;
             answer[1] = i;
             return answer;
         }
     }
-    console.log("Is Offline")
     answer[0] = false;
     return answer;
 }

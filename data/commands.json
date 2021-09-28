@@ -1,0 +1,85 @@
+{
+  "commands": [
+    {
+      "name": "HELP",
+      "description": "Lists all commands and how to use them.",
+      "syntax": "!help"
+    },
+    {
+      "name": "TEST",
+      "description": "Used to check if the Bot is online.",
+      "syntax": "!test"
+    },
+
+
+
+    {
+      "name": "Set to online",
+      "description": "Set yourself to Online.",
+      "syntax": "!onlineme"
+    },
+    {
+      "name": "Set to offline",
+      "description": "Set yourself to Offline.",
+      "syntax": "!unonlineme"
+    },
+    {
+      "name": "Next Customer",
+      "description": "Displays next customer, Creates Voice Channel",
+      "syntax": "!next"
+    },
+
+
+
+    {
+      "name": "Set to ready",
+      "description": "Set yourself to Ready.",
+      "syntax": "!readyme"
+    },
+    {
+      "name": "Set to busy",
+      "description": "Set yourself to Busy.",
+      "syntax": "!unreadyme"
+    },
+
+
+
+    {
+      "name": "Display Admins",
+      "description": "Display a list of all registered Admins.",
+      "syntax": "!admins"
+    },
+    {
+      "name": "Display all Onliners",
+      "description": "Display a list of all Admins set to online.",
+      "syntax": "!admins"
+    },
+    {
+      "name": "Register Admin",
+      "description": "Register a new admin (Only for Owners)",
+      "syntax": "!register USER-ID NAME"
+    },
+    {
+      "name": "Deregister Admin",
+      "description": "Remove a user from the Admin-List",
+      "syntax": "!unregister USER-ID"
+    },
+
+
+    {
+      "name": "Add Note",
+      "description": "Add a note to the User-File",
+      "syntax": "!addNote USER_ID NOTE"
+    },
+    {
+      "name": "Add Problem",
+      "description": "Add a Problem to the User-File (Overwrites existing entry)",
+      "syntax": "!addNote USER_ID PROBLEM"
+    },
+    {
+      "name": "Display Customer",
+      "description": "Display the Information of a registered customer",
+      "syntax": "!customer USER_ID"
+    }
+  ]
+}

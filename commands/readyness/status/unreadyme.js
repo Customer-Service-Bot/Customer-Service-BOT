@@ -12,11 +12,8 @@ module.exports = function (msg, splits) {
     const onlinersJSON = fs.readFileSync('./data/onliners.json');
     const onliners = JSON.parse(onlinersJSON);
 
-    console.log(onliners);
-
     function finished(err) {
         console.log("Status to ready!");
-        //msg.reply("You have been set to ready!");
     }
 
     let user_id = msg.author.id;
@@ -26,7 +23,6 @@ module.exports = function (msg, splits) {
         if (isOnline(user_id)[0] === true) {
             if (isReady(user_id)[0] === false) {
 
-                console.log("User is already set to BUSY");
                 msg.reply("You can not be set to 'busy' - You are already set to 'busy'");
             }
             if (isReady(user_id)[0] === true) {
@@ -36,7 +32,7 @@ module.exports = function (msg, splits) {
                         onliners["onliners"][i].status = "BUSY";
                         let onliners_JSON = JSON.stringify(onliners);
                         fs.writeFile('data/onliners.json', onliners_JSON, finished);
-                        msg.reply("You have been set to busy!")
+                        msg.reply("You have been set to busy!").catch(console.error);
                         break;
                     }
                 }

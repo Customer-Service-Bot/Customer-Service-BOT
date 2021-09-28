@@ -34,15 +34,15 @@ module.exports = function (msg, splits) {
             }
 
             async function send_embed(msg, customer_embed) {
-                await msg.author.send({ embeds: [customer_embed] });
+                await msg.author.send({ embeds: [customer_embed] }).catch(console.error);
             }
             send_embed(msg,customer_embed).catch(console.error);
 
         } else {
-            msg.reply("This customer doesn't exist")
+            msg.reply("This customer doesn't exist").catch(console.error);
         }
 
     } else {
-        msg.reply("Please enter the corresponding userID like this '!addNote USER_ID This is the note to be added'")
+        msg.reply("Please enter the corresponding userID like this '!addNote USER_ID This is the note to be added'");
     }
 }

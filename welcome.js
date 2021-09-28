@@ -13,7 +13,6 @@ module.exports = function (member) {
 
     if (findOnliners()[0] === true) {
         //check for Readyness
-        console.log(findReady())
         if (findReady()[0] === true) {
             member.send(`Welcome to the support Server of the Test-Company. ${findReady()[1]} Support-Agents are currently ready to support you. You will soon receive a private message so keep an eye on your messages on the left side.`);
         } else if (findReady()[0] === false){

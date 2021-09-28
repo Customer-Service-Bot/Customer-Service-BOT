@@ -14,43 +14,33 @@ module.exports = function (member) {
         const path = './data/customers/' + user_id + '.json';
         fs.unlinkSync(path);
     }
-    console.log("1")
 
     //Remove from customerJSON
     function finished(err) {
         console.log("CustomersJSON ready!");
     }
-    console.log("2")
 
     for (let i = 0; i < customers["CustomersWaiting"].length; i++) {
-        console.log(customers["CustomersWaiting"].length);
         if (customers["CustomersWaiting"][i].user_id === user_id) {
             customers["CustomersWaiting"].splice(i, 1);
             let new_customers_JSON = JSON.stringify(customers);
             fs.writeFile('data/customers/customersJSON.json', new_customers_JSON, finished);
         }
     }
-    console.log("3")
 
     for (let i = 0; i < customers["CustomersKnown"].length; i++) {
-        console.log(customers["CustomersKnown"].length);
         if (customers["CustomersKnown"][i].user_id === user_id) {
             customers["CustomersKnown"].splice(i, 1);
             let new_customers_JSON = JSON.stringify(customers);
             fs.writeFile('data/customers/customersJSON.json', new_customers_JSON, finished);
         }
     }
-    console.log("4")
-
 
     //delete Voice-Channel
     let v_channel_name = 'Voice  for ' + member.user.username;
-    let v_channel = member.guild.channels.cache.find(channel => channel.name === v_channel_name);
+    let v_channel = member.guild.channels.cache.find(channel => channel.name === v_channel_name).catch(console.error);
 
     if (v_channel !== undefined){
-        v_channel.delete();
-    } else {
-        console.log("Channel cant be deleted. Doesnt exist.")
+        v_channel.delete().catch(console.error);
     }
-    console.log("5")
 }

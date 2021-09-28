@@ -9,13 +9,11 @@ module.exports = function (id) {
     for (let i = 0; i < admins["admins"].length; i++){
 
         if (admins["admins"][i].user_id === id){
-            console.log("True");
             answer[0] = true;
             answer[1] = i;
             return answer;
         }
     }
-    console.log("False")
     answer[0] = false;
     return answer;
 }
