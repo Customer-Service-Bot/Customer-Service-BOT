@@ -42,12 +42,12 @@ module.exports = function (msg, splits) {
         //Change Role
 
         //memberOBJ retreival
-        const member = msg.guild.members.cache.get(user_id).catch(console.error);
+        const member = msg.guild.members.cache.get(user_id);
         const server = msg.guild;
 
-        let old_role = msg.guild.roles.cache.find(role => role.name === "Customer-Waiting").catch(console.error);
+        let old_role = msg.guild.roles.cache.find(role => role.name === "Customer-Waiting");
 
-        let new_role = msg.guild.roles.cache.find(role => role.name === "Customer").catch(console.error);
+        let new_role = msg.guild.roles.cache.find(role => role.name === "Customer");
 
 
         member.roles.remove(old_role).catch(console.error);
@@ -73,7 +73,7 @@ module.exports = function (msg, splits) {
 
         //Make Voice Channel
         let v_channel_name = member.user.username;
-        let v_channel = member.guild.channels.cache.find(channel => channel.name === 'Voice  for ' + v_channel_name).catch(console.error);
+        let v_channel = member.guild.channels.cache.find(channel => channel.name === 'Voice  for ' + v_channel_name);
         if (v_channel === undefined) {
 
             server.channels.create('Voice  for ' + v_channel_name, {

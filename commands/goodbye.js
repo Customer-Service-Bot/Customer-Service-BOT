@@ -38,7 +38,7 @@ module.exports = function (member) {
 
     //delete Voice-Channel
     let v_channel_name = 'Voice  for ' + member.user.username;
-    let v_channel = member.guild.channels.cache.find(channel => channel.name === v_channel_name).catch(console.error);
+    let v_channel = member.guild.channels.cache.find(channel => channel.name === v_channel_name);
 
     if (v_channel !== undefined){
         v_channel.delete().catch(console.error);

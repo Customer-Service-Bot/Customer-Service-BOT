@@ -52,7 +52,7 @@
     {
       "name": "Display all Onliners",
       "description": "Display a list of all Admins set to online.",
-      "syntax": "!admins"
+      "syntax": "!onliners"
     },
     {
       "name": "Register Admin",
@@ -74,7 +74,7 @@
     {
       "name": "Add Problem",
       "description": "Add a Problem to the User-File (Overwrites existing entry)",
-      "syntax": "!addNote USER_ID PROBLEM"
+      "syntax": "!addProblem USER_ID PROBLEM"
     },
     {
       "name": "Display Customer",

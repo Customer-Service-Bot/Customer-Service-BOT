@@ -33,7 +33,7 @@ module.exports = function (member) {
         customer.user_id = member.user.id;
         customer.user_name = member.user.username;
         customer.joined = member.joinedTimestamp;
-        customer.problem = "";
+        customer.problem = "Unknown";
         customer.notes = [];
 
         //Create Customers JSON
