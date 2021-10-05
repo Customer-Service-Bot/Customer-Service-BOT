@@ -14,9 +14,13 @@ module.exports = function (member) {
     if (findOnliners()[0] === true) {
         //check for Readyness
         if (findReady()[0] === true) {
-            member.send(`Welcome to the support Server of the Test-Company. ${findReady()[1]} Support-Agents are currently ready to support you. You will soon receive a private message so keep an eye on your messages on the left side.`);
+            member.send(`Welcome to the support Server of the Test-Company. ${findReady()[1]} Support-Agents are 
+                        currently ready to support you. You will soon receive a private message so keep an eye on your 
+                        messages on the left side.`);
         } else if (findReady()[0] === false){
-            member.send(`Welcome to the support Server of the Test-Company. There are currently no Support-Agents ready to support you. Please have patience. You will receive a private message as soon as someone is ready for you so keep an eye on your messages on the left side.`);
+            member.send(`Welcome to the support Server of the Test-Company. There are currently no Support-Agents ready 
+                        to support you. Please have patience. You will receive a private message as soon as someone is 
+                        ready for you so keep an eye on your messages on the left side.`);
         }
 
         function finished(err) {
@@ -60,7 +64,8 @@ module.exports = function (member) {
     } else {
 
         async function kick_user(member){
-            await member.user.send("There are currently no agents online for support. You will not be able to join the support server at this time. Please try to join again within the opening times!")
+            await member.user.send("There are currently no agents online for support. You will not be able to join " +
+                                   "the support server at this time. Please try to join again within the opening times!")
                 .catch(console.error)
             await member.guild.members.kick(member, "Test")
                 .catch(console.error)
