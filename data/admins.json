@@ -1,22 +1,7 @@
 {
   "owners": [
-    {
-      "user_name": "  ",
-      "user_id": "501041912548032512"
-    },
-    {
-      "user_name": "  ",
-      "user_id": "234072435895304192"
-    }
   ],
   "admins": [
-    {
-      "user_id": "234072435895304192",
-      "user_name": "Tillman Städtner"
-    },
-    {
-      "user_id": "689410166860283949",
-      "user_name": "Paul Saalfrank"
-    }
+
   ]
 }

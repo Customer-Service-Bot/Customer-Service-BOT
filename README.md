@@ -44,7 +44,7 @@ Save the **TOKEN** of the bot and keep it a secret as it is the key to controlli
 
 Scroll down and activate the two sliders under **Privileged Gateway Intents**.
 
-You are done on the developer portal. Now you need to create a **Server** in **Discord**.
+Don't close the developer portal. You will need it after the next step. Now you need to create a **Server** in **Discord**.
 
 ###Creating a Server
 
@@ -57,6 +57,14 @@ a template. This template already contains all the required settings, roles and 
 
 You can now add all the employees profiles to the Server. Add the 'Admin'-Role to every employee by
 right-clicking on their profile, clicking on 'Roles' and checking the 'Admin'-Role.
+
+###Adding the Bot to your Server
+To add the bot to your server you need to go back to the developer portal. 
+On the left side of the page go to 'OAuth2'.
+
+Scroll down to the 'OAuth2 URL Generator'. Put a checkmark in the box 'bot'.
+Below the field of boxes a URL will have been generated. Click on 'Copy' and enter the link into your browser.
+A message will ask you which server to add the bot to. Choose the Server you just created.
 
 ###Seeing IDs
 
@@ -78,7 +86,7 @@ a native one is already installed)
 ###Configuring the Application
 
 On this **GitHub**-Page. Go to:
->'Code' (Greend Button) --> choose 'Download ZIP'
+>'Code' (Green Button) --> choose 'Download ZIP'
 
 Unpack the Zip in the location you want the application in.
 In the root folder of the application open the `.env`-File
