@@ -1,3 +1,5 @@
+//This file checks if an admin is ready and returns an array [true/false, position in onliners.json]
+
 const fs = require('fs');
 
 module.exports = function (id) {

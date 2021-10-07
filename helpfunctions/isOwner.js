@@ -1,3 +1,5 @@
+//checks if a user-id belongs to an Owner. Returns an array [true/false, position in admins.json]
+
 const fs = require('fs');
 
 module.exports = function (id) {

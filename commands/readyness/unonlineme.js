@@ -1,3 +1,5 @@
+//logs the admin with the given id out
+
 const fs = require('fs');
 const Discord = require('discord.js');  //Import of the Discord.js-Library
 
@@ -9,6 +11,7 @@ module.exports = function (msg, splits) {
     const onlinersJSON = fs.readFileSync('data/onliners.json');
     const onliners = JSON.parse(onlinersJSON);
 
+    //creates user object
     let user_id = msg.author.id;
     let user_name = msg.author.username;
     let user_obj = {};
@@ -19,8 +22,9 @@ module.exports = function (msg, splits) {
     function finished(err) {
         console.log("Onliners Ready!");
     }
-
+    //checks if the sender is an Admin
     if (isAdmin(user_id)[0] === true) {
+        //removes Admin from the onliners.json
         if (onliners["onliners"].length !== 0) {
             for (let i = 0; i < onliners["onliners"].length; i++) {
 

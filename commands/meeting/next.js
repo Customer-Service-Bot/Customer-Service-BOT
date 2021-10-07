@@ -1,3 +1,5 @@
+//Selects the next customer and takes multiple steps
+
 const Discord = require('discord.js');  //Import of the Discord.js-Library
 
 const fs = require('fs');
@@ -8,19 +10,19 @@ const findcustomerswaiting = require('../../helpfunctions/findCustomersWaiting')
 const totimeanddate = require('../../helpfunctions/toTimeAndDate')
 
 module.exports = function (msg, splits) {
+    //checks if there are customers waiting
     if (findcustomerswaiting(msg).length > 0) {
 
         const user_id = findoldestcustomer(msg);
 
         //Move in CustomersJSON
-
         const customersJSON = fs.readFileSync('data/customers/customersJSON.json');
         const customers = JSON.parse(customersJSON)
 
         function finished(err) {
             console.log("Status to ready!");
         }
-
+        //Moves the customer from 'CustomersWaiting' to 'CustomersKnown'
         let joined = 0;
         for (let i = 0; i < customers["CustomersWaiting"].length; i) {
             if (customers["CustomersWaiting"][i].user_id === user_id) {
@@ -41,7 +43,7 @@ module.exports = function (msg, splits) {
 
         //Change Role
 
-        //memberOBJ retreival
+        //memberOBJ retrieval
         const member = msg.guild.members.cache.get(user_id);
         const server = msg.guild;
 
@@ -49,7 +51,7 @@ module.exports = function (msg, splits) {
 
         let new_role = msg.guild.roles.cache.find(role => role.name === "Customer");
 
-
+        //Removes old role and add new role
         member.roles.remove(old_role).catch(console.error);
         member.roles.add(new_role).catch(console.error);
 
@@ -72,10 +74,12 @@ module.exports = function (msg, splits) {
 
 
         //Make Voice Channel
+
+        //set server values
         let v_channel_name = member.user.username;
         let v_channel = member.guild.channels.cache.find(channel => channel.name === 'Voice  for ' + v_channel_name);
         if (v_channel === undefined) {
-
+            //creates server with values
             server.channels.create('Voice  for ' + v_channel_name, {
                 reason: 'Text Channel for the support of' + v_channel_name,
                 type: 'GUILD_VOICE',

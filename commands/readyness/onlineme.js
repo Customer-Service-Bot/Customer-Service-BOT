@@ -1,6 +1,7 @@
+//Logs user with the given id in
+
 const fs = require('fs');
 const Discord = require('discord.js');  //Import of the Discord.js-Library
-//const constants = require("constants");
 
 const isOwner = require('../../helpfunctions/isOwner');
 const isAdmin = require('../../helpfunctions/isAdmin');
@@ -15,7 +16,7 @@ module.exports = function (msg, splits) {
         console.log("Onliners Ready!");
         msg.reply("You have been logged in!").catch(console.error);
     }
-
+    //Creates user object with the needed information
     const timestamp = Date.now();
     let user_id = msg.author.id;
     let user_name = msg.author.username;
@@ -24,8 +25,9 @@ module.exports = function (msg, splits) {
     user_obj.user_id = user_id;
     user_obj.timestamp = timestamp;
     user_obj.status = "READY";
-
+    //checks if the sender is an Admin
     if (isAdmin(user_id)[0] === true) {
+        //Adds user object to the onliners.json
         if (onliners["onliners"].length !== 0) {
             for (let i = 0; i < onliners["onliners"].length; i++) {
 

@@ -1,6 +1,7 @@
+//Sets the status of a logged-in Admin to 'BUSY'
+
 const fs = require('fs');
 const Discord = require('discord.js');  //Import of the Discord.js-Library
-//const constants = require("constants");
 
 const isOwner = require('../../../helpfunctions/isOwner');
 const isAdmin = require('../../../helpfunctions/isAdmin');
@@ -18,13 +19,14 @@ module.exports = function (msg, splits) {
 
     let user_id = msg.author.id;
 
-
+    //checks if the sender is an Admin, is logged-in and if they are 'BUSY'
     if (isAdmin(user_id)[0] === true) {
         if (isOnline(user_id)[0] === true) {
             if (isReady(user_id)[0] === false) {
 
                 msg.reply("You can not be set to 'busy' - You are already set to 'busy'");
             }
+            //if Admin is 'READY' sets status to 'BUSY'
             if (isReady(user_id)[0] === true) {
 
                 for (let i = 0; i < onliners["onliners"].length; i++) {

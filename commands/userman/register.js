@@ -1,6 +1,7 @@
+//Adds the user with id and name to the admins.json
+
 const fs = require('fs');
 const Discord = require('discord.js');  //Import of the Discord.js-Library
-//const constants = require("constants");
 const isOwner = require('../../helpfunctions/isOwner');
 
 module.exports = function (msg, splits) {
@@ -12,7 +13,7 @@ module.exports = function (msg, splits) {
         console.log("Admins Ready!");
         msg.reply("ID registered!").catch(console.error);
     }
-
+    //checks if the message has all the arguments needed
     if (splits.length > 0) {
 
         if (splits.length > 1) {
@@ -21,7 +22,7 @@ module.exports = function (msg, splits) {
                 msg.reply("The first argument needs to be an ID (18 Digit Number). Please enter the command like this: ```!register USER-ID NAME```")
                 return;
             }
-
+            //creates a user object
             let user_id = splits[0];
             let user_name = splits.slice(1).join(' ');
             let user_obj = {};
@@ -29,8 +30,9 @@ module.exports = function (msg, splits) {
             user_obj.user_name = user_name;
 
             let author_id = msg.author.id;
-
+            //checks if the sender is an Owner
             if (isOwner(author_id)[0] === true) {
+                //adds the user
                 if (admins["admins"].length !== 0) {
                     for (let i = 0; i < admins["admins"].length; i++) {
                         if (admins["admins"][i].user_id === user_id) {

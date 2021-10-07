@@ -1,3 +1,5 @@
+//updates the problem in the customers file
+
 const fs = require('fs')
 
 module.exports = function (msg, splits) {
@@ -10,15 +12,19 @@ module.exports = function (msg, splits) {
         console.log("Writing done!");
     }
 
+    //Checks if the right arguments were given
     if (splits.length > 0) {
         if (splits.length > 1) {
             const customer_id = splits[0];
 
             //get users JSON
+
+            //checks if customer has JSON-file
             if (hasJSON(customer_id) === true) {
                 const customer_JSON = fs.readFileSync(`data/customers/${customer_id}.json`)
                 const customer = JSON.parse(customer_JSON);
 
+                //defines the problem from the message
                 customer.problem = splits.slice(1).join(' ');
 
                 let new_customer_JSON = JSON.stringify(customer);

@@ -1,4 +1,4 @@
-
+//take the unix-time in ms and converts it to a string with Date and Time
 module.exports = function (ms) {
 
     //let ms = Date.now();

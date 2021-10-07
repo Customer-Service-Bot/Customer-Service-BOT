@@ -1,3 +1,5 @@
+//Checks if a user-id belongs to an Admin. Returns an array[true/false, position in admins.json]
+
 const fs = require('fs');
 
 module.exports = function (id) {

@@ -1,3 +1,6 @@
+//This file is activated when a new user joins a server.
+
+
 const fs = require('fs');
 const Discord = require('discord.js');  //Import of the Discord.js-Library
 const hasJSON = require('./helpfunctions/hasJSON');
@@ -11,6 +14,7 @@ module.exports = function (member) {
     //check for Onliners
     console.log(findOnliners())
 
+    //Checking for logged-in Admins and sends a message to the new user
     if (findOnliners()[0] === true) {
         //check for Readyness
         if (findReady()[0] === true) {
@@ -40,13 +44,13 @@ module.exports = function (member) {
         customer.problem = "Unknown";
         customer.notes = [];
 
-        //Create Customers JSON
+        //Creates the customers JSON if it doesn't exist
         if (hasJSON(member.user.id) === false) {
             const single_customer_JSON = JSON.stringify(customer);
             fs.writeFileSync('data/customers/' + member.user.id + '.json', single_customer_JSON, finished);
         }
 
-        //Add to CustomersJSON
+        //Add new user to CustomersJSON
         const general_customer = {};
         general_customer.user_id = member.user.id;
         general_customer.user_name = member.user.username;
@@ -62,7 +66,7 @@ module.exports = function (member) {
 
 
     } else {
-
+        //Kicks the new user if no Admin is logged-in and informs the new user about it
         async function kick_user(member){
             await member.user.send("There are currently no agents online for support. You will not be able to join " +
                                    "the support server at this time. Please try to join again within the opening times!")

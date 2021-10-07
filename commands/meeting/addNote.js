@@ -1,3 +1,5 @@
+//This file adds a note to the users file
+
 const fs = require('fs')
 const hasJSON = require("../../helpfunctions/hasJSON");
 
@@ -10,16 +12,23 @@ module.exports = function (msg, splits) {
         console.log("Writing done!");
     }
 
+    //checks if the right arguments were given
     if (splits.length > 0) {
         if (splits.length > 1) {
             const customer_id = splits[0];
+
+
             //get users JSON
+
+            //checks if the customer has a JSON
             if (hasJSON(customer_id) === true) {
                 const customer_JSON = fs.readFileSync(`data/customers/${customer_id}.json`)
                 const customer = JSON.parse(customer_JSON);
 
+                //defines the note to be added
                 const new_note = splits.slice(1).join(' ');
 
+                //adds note to the file
                 customer["notes"].push(new_note);
 
                 let new_customer_JSON = JSON.stringify(customer);

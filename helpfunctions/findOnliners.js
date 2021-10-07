@@ -1,3 +1,4 @@
+//Checks if there are Admins logged in and returns an array[true/false, amount]
 
 const fs = require('fs');
 

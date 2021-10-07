@@ -1,12 +1,14 @@
+//removes the user fitting the given id from the admins.json
+
 const fs = require('fs');
 const Discord = require('discord.js');  //Import of the Discord.js-Library
-//const constants = require("constants");
 const isOwner = require('../../helpfunctions/isOwner');
 
 module.exports = function (msg, splits) {
     const adminsJSON = fs.readFileSync('data/admins.json');
     const admins = JSON.parse(adminsJSON);
 
+    //Gets all the required values
     let author_id = msg.author.id;
     let user_id = splits[0];
     let user_obj = {};
@@ -15,8 +17,9 @@ module.exports = function (msg, splits) {
     function finished(err) {
         console.log("Onliners Ready!");
     }
-
+    //checks if the message creator is an Owner
     if (isOwner(author_id)[0] === true) {
+        //Removes the User from the admins.json
         if (admins["admins"].length !== 0) {
             for (let i = 0; i < admins["admins"].length; i++) {
 

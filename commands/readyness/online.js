@@ -1,3 +1,5 @@
+//Displays all the logged-in Admins
+
 const fs = require('fs');
 
 const Discord = require('discord.js')
@@ -7,6 +9,7 @@ module.exports = function(msg,splits){
     const onlinersJSON = fs.readFileSync('data/onliners.json');
     const onliners = JSON.parse(onlinersJSON);
 
+    //function to make unix-timestamp into time
     function msToTime (ms){
         let date = new Date(ms);
         let hours = date.getHours();
@@ -18,11 +21,11 @@ module.exports = function(msg,splits){
     }
 
 
-
+    //creates MessageEmbed
     const user_embed = new MessageEmbed()
         .setColor('#0099ff')
         .setTitle('Logged-in Users')
-
+        //Adds all the entries from the onliners.json to the MessageEmbed
         for (let i =0; i < onliners["onliners"].length; i++){
             let timestamp = msToTime(onliners["onliners"][i].timestamp);
             user_embed.addFields(

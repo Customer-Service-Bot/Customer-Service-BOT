@@ -59,6 +59,7 @@ You can now add all the employees profiles to the Server. Add the 'Admin'-Role t
 right-clicking on their profile, clicking on 'Roles' and checking the 'Admin'-Role.
 
 ###Adding the Bot to your Server
+
 To add the bot to your server you need to go back to the developer portal. 
 On the left side of the page go to 'OAuth2'.
 

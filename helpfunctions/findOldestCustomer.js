@@ -1,3 +1,5 @@
+//Uses the function 'findCustomersWaiting' and ckecks for the user with longest wait time/oldest unix-timestamp
+
 const findCustomersWaiting = require('./findCustomersWaiting')
 const fs = require("fs");
 

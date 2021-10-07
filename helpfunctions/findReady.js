@@ -1,3 +1,5 @@
+//Checks if there are Admins with the status ready and returns an array [true/false, amount]
+
 const fs = require('fs')
 
 module.exports = function(){
@@ -9,8 +11,6 @@ module.exports = function(){
         if (onliners["onliners"][i].status === 'READY'){
             ready_users = ready_users + 1;
         }
-
-
         i++;
     }
 

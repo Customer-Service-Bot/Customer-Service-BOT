@@ -1,3 +1,5 @@
+//Is activated whe a user is leaving the service or gets kicked
+
 const fs = require('fs')
 const Discord = require('discord.js');  //Import of the Discord.js-Library
 const hasJSON = require('../helpfunctions/hasJSON');

@@ -1,3 +1,5 @@
+//Checks if an Admin is logged-in. Returns an array [true/false, position in onliners.json]
+
 const fs = require('fs');
 
 module.exports = function (id) {
