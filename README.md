@@ -12,9 +12,9 @@ The Bot allows you to use Discord as a replacement of E-Mail and Telephone by us
 
 This application is the result of a bachelor thesis.
 
-##How to set up the Application
+## How to set up the Application
 
-###The Discord System
+### The Discord System
 
 To use the application all the employees using it need a **Discord-Account**.
 To create it go to **https://discord.com/**.
@@ -23,7 +23,7 @@ You can either use the desktop client or the browser app.
 As the application is written **JavaScript** and **Node.js** the person setting it up should be capable of somewhat 
 understanding the language and able to start a **Node**-App. 
 
-###The Developer Portal
+### The Developer Portal
 
 The first step of setting the bot up is to create an application on the **Discord Developer Portal**.
 **https://discord.com/developers/docs/intro**
@@ -46,7 +46,7 @@ Scroll down and activate the two sliders under **Privileged Gateway Intents**.
 
 Don't close the developer portal. You will need it after the next step. Now you need to create a **Server** in **Discord**.
 
-###Creating a Server
+### Creating a Server
 
 To create a **Server** with the right settings for the application enter the following link in the browser.
 
@@ -58,7 +58,7 @@ a template. This template already contains all the required settings, roles and 
 You can now add all the employees profiles to the Server. Add the 'Admin'-Role to every employee by
 right-clicking on their profile, clicking on 'Roles' and checking the 'Admin'-Role.
 
-###Adding the Bot to your Server
+### Adding the Bot to your Server
 
 To add the bot to your server you need to go back to the developer portal. 
 On the left side of the page go to 'OAuth2'.
@@ -67,7 +67,7 @@ Scroll down to the 'OAuth2 URL Generator'. Put a checkmark in the box 'bot'.
 Below the field of boxes a URL will have been generated. Click on 'Copy' and enter the link into your browser.
 A message will ask you which server to add the bot to. Choose the Server you just created.
 
-###Seeing IDs
+### Seeing IDs
 
 To interact with the Bot in reference to entities in the **Discord**-System like Users, Channels, Roles
 etc. you need the ability to see and copy IDs. This is done by activating the **Developer Mode**.
@@ -75,7 +75,7 @@ Select the 'gear' next te your profile picture on the bottom right of the **Disc
 go to 'Advanced'. Activate the setting 'Developer Mode'. You can now right-click on channels for example and
 'Copy ID'.
 
-###Installing Node
+### Installing Node
 To run the local application of the Bot you need to install node on the system.
 To do so go to: **https://nodejs.org/en/**. Please download the **Current**-Version and install it.
 
@@ -84,7 +84,7 @@ on a command line interface.
 (A command line interface is also required to run the program. Depending on the operating system
 a native one is already installed)
 
-###Configuring the Application
+### Configuring the Application
 
 On this **GitHub**-Page. Go to:
 >'Code' (Green Button) --> choose 'Download ZIP'
@@ -112,7 +112,7 @@ in `/data/admins.json`.
 You can get the 'USER_ID' by right-clicking on the User and selecting 'Copy ID'. If you want to
 enter multiple users, add them in the same format after the `}` seperated by a `,`. 
 
-###Running the application 
+### Running the application 
 
 To run the application you need to run it in a Command-Line-Interface.
 It needs to be pointed to the root folder of the application.
@@ -125,7 +125,7 @@ Run the application like this
 
 If you did everything right the console will show `I'm Ready`.
 
-##How to use the Application
+## How to use the Application
 
 Customers can join the Server by using the invite link of your server.
 To find it select the little arrow in the top left of your server and select 'Invite people'. 
